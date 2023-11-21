@@ -19,3 +19,28 @@ Article.where(state: :publish_wait)
 # OK
 Article.publish_wait
 ```
+<br>
+<br>
+<br>
+
+### enum宣言をした時に自動的に追加されるメソッドまとめ
+以下のようにenumが定義されている場合：
+```
+enum state: { draft: 0, published: 1, publish_wait: 2 }
+```
+Railsは以下の種類のメソッドをArticleモデルに追加する：
+
+1. スコープ（Scope）<br>特定の状態を持つレコードを簡単に取得できる
+```
+Article.draft、 Article.published、 Article.publish_wait
+```
+2. 値のセットメソッド<br>
+レコードのstateを特定の値に設定するメソッド。これらのメソッドを使用すると、stateを対応する値に更新してデータベースに保存する。
+```
+article.draft!、 article.published!、 article.publish_wait!
+```
+3. プレディケートメソッド（述語メソッド）<br>
+レコードのstateが特定の値かどうかを確認するためのメソッド。これらのメソッドは、対応する値が設定されている場合にtrueを返す。
+```
+article.draft?、 article.published?、 article.publish_wait?
+```
