@@ -9,3 +9,13 @@ end
 ```
 この定義により、Articleオブジェクトに対して```draft?```メソッドを呼び出すと、その記事のstate属性が```0```であるかどうかをチェックできる。<br>
 ```published?```や```publish_wait?```メソッドも利用できる。
+
+以下のようにステータスの絞り込みでもwhere句を使用せず簡潔に書くことができる。
+```
+# NG
+article.state = 'publish_wait'
+Article.where(state: :publish_wait)
+
+# OK
+Article.publish_wait
+```
