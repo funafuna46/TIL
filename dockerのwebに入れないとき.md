@@ -4,7 +4,8 @@
 - ```docker ps```コマンドで確認すると、webコンテナが存在しない
 
 #### 解決方法
-1. コンテナのログを確認するため、```docker logs コンテナ名```でログを確認する
-2. syntax error等原因が分かるので、コードを修正
-3. ```docker compose restart```でdockerを再起動
-4. ```docker ps```でwebコンテナが起動しているか確認できる
+1. ```docker ps -a```コマンドを実行して停止している該当のコンテナIDを確認する
+2. コンテナのログを確認するため、```docker logs コンテナID```でログを確認する
+3. syntax error等原因が分かるので、コードを修正
+4. ```docker compose restart```でdockerを再起動
+5. ```docker ps```でwebコンテナが起動しているか確認できる
