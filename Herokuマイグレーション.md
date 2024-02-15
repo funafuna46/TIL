@@ -18,7 +18,7 @@ heroku run rake db:seed -a アプリ名
 ### ローカルでマイグレーションファイルやseedファイル変更した場合（開発中）
 1. データベースのリセット
 ```
-heroku pg:reset DATABASE --confirm アプリ名
+heroku pg:reset DATABASE --confirm アプリ名 -a アプリ名
 ```
 2. マイグレーションを実行
 ```
